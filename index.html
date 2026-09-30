@@ -267,6 +267,27 @@
     <div class="cart__success" id="cartSuccess" hidden></div>
   </aside>
 
+  <div class="product" id="product" hidden>
+    <div class="product__dialog" role="dialog" aria-modal="true" aria-labelledby="productName">
+      <button class="product__close" id="productClose" aria-label="Закрыть">✕</button>
+      <div class="product__media">
+        <img id="productPhoto" src="" alt="">
+        <span class="product__tag" id="productTag" hidden></span>
+      </div>
+      <div class="product__info">
+        <p class="eyebrow" id="productCategory"></p>
+        <h3 class="product__name" id="productName"></h3>
+        <div class="product__notes" id="productNotes"></div>
+        <p class="product__about" id="productAbout"></p>
+        <dl class="product__specs" id="productSpecs"></dl>
+        <div class="product__actions">
+          <button class="btn btn--primary" id="productAdd"></button>
+          <button class="btn btn--ghost" id="productCloseText">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="toast" id="toast"></div>
 
   <script src="script.js"></script>

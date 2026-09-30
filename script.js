@@ -14,6 +14,61 @@ const MENU = [
   { id: "brownie", cat: "food", name: "Брауни с кедром", desc: "Тёмный шоколад и обжаренный кедровый орех.", notes: ["шоколад", "кедр"], price: 240 },
 ];
 
+const DETAILS = {
+  espresso: {
+    about: "Наш домашний бленд: 70% Бразилии Серрадо и 30% Колумбии Уила. Средняя обжарка раскрывает сладость тростникового сахара, какао и жареного фундука. Короткий, плотный, с долгим послевкусием — лучший утренний старт.",
+    specs: { "Объём": "40 мл", "Зерно": "Бразилия, Колумбия", "Обжарка": "средняя" },
+  },
+  cappuccino: {
+    about: "Двойной эспрессо на домашнем бленде и бархатное молоко, взбитое до плотной микропены. Сбалансированный и мягкий, с нотами молочного шоколада и карамели. Бариста нарисует розетту — если не выпьете её раньше, чем заметите.",
+    specs: { "Объём": "250 мл", "Зерно": "домашний бленд", "Молоко": "3,2% или овсяное" },
+  },
+  flatwhite: {
+    about: "Двойной ристретто на эфиопском зерне и тонкий слой молока. Кофе здесь главный: ягодная сладость и сливочная текстура. Для тех, кому капучино слишком молочный, а эспрессо — слишком строгий.",
+    specs: { "Объём": "180 мл", "Зерно": "Эфиопия Сидамо", "Основа": "двойной ристретто" },
+  },
+  raf: {
+    about: "Наша сибирская гордость. Эспрессо взбиваем со сливками и пастой из кедрового ореха, которую делаем сами. Получается нежный, сливочный напиток с тёплым ореховым вкусом — особенно хорош в морозное утро.",
+    specs: { "Объём": "300 мл", "Основа": "эспрессо, сливки 10%", "Добавка": "кедровая паста" },
+  },
+  v60: {
+    about: "Ручное заваривание через воронку Hario V60. Мытая Эфиопия Иргачеффе светлой обжарки даёт прозрачную, чайную чашку с ароматом жасмина, бергамота и спелого персика. Лучше пить без сахара и молока.",
+    specs: { "Объём": "250 мл", "Зерно": "Эфиопия Иргачеффе", "Обжарка": "светлая" },
+  },
+  aeropress: {
+    about: "Кенийский АА из региона Ньери, заваренный в аэропрессе под давлением. Сочный и яркий: чёрная смородина, томат и розовый грейпфрут. Для любителей кислинки и насыщенного тела.",
+    specs: { "Объём": "200 мл", "Зерно": "Кения Ньери AA", "Обжарка": "светлая" },
+  },
+  chemex: {
+    about: "Большой кемекс сорта недели — спросите у бариста, что сейчас на полке. Удобно поделить на двоих или перелить в термос и взять с собой в поход. Термос можно принести свой.",
+    specs: { "Объём": "500 мл", "Зерно": "сорт недели", "Подаём": "в кемексе или в термос" },
+  },
+  coldbrew: {
+    about: "Молотый кофе настаиваем в холодной воде 18 часов, затем фильтруем. Получается мягкий, почти без горечи и кислинки напиток с нотами шоколада и чернослива. Кофеина больше, чем в эспрессо — бодрит надолго.",
+    specs: { "Объём": "300 мл", "Зерно": "Бразилия, Колумбия", "Настаиваем": "18 часов" },
+  },
+  tonic: {
+    about: "Лёд, охлаждённый тоник и шот эфиопского эспрессо, который красиво растекается по стакану. Горчинка тоника и цитрусовые ноты кофе освежают лучше лимонада. Подаём с апельсиновой цедрой.",
+    specs: { "Объём": "300 мл", "Зерно": "Эфиопия", "Подаём": "с апельсиновой цедрой" },
+  },
+  icelatte: {
+    about: "Двойной эспрессо, холодное молоко и много льда. Понятный и освежающий, с нотами карамели и ореха. Можно попросить добавить сироп или заменить молоко на растительное.",
+    specs: { "Объём": "350 мл", "Зерно": "домашний бленд", "Молоко": "3,2% или овсяное" },
+  },
+  croissant: {
+    about: "Классический французский круассан от местной пекарни — привозим каждое утро к открытию. Хрустящая корочка, десятки слоёв теста и настоящее сливочное масло. Лучшая пара к капучино.",
+    specs: { "Вес": "80 г", "Состав": "слоёное тесто, масло 82%", "Пекарня": "местная, Красноярск" },
+  },
+  cheesecake: {
+    about: "Нежный чизкейк на песочной основе с конфи из алтайской облепихи. Сливочная сладость и яркая кислинка ягод отлично дополняют друг друга. Особенно хорош с фильтр-кофе.",
+    specs: { "Вес": "140 г", "Основа": "сливочный сыр, песочное тесто", "Топпинг": "облепиховое конфи" },
+  },
+  brownie: {
+    about: "Плотный влажный брауни на бельгийском шоколаде 70% с хрустящей корочкой. Сверху — обжаренный сибирский кедровый орех. Подходит к эспрессо и колд брю.",
+    specs: { "Вес": "90 г", "Шоколад": "бельгийский 70%", "Топпинг": "кедровый орех" },
+  },
+};
+
 const QUIZ = [
   {
     key: "milk",
@@ -177,7 +232,8 @@ const menuGrid = $("#menuGrid");
 function renderMenu(filter = "all") {
   const items = filter === "all" ? MENU : MENU.filter((item) => item.cat === filter);
   menuGrid.innerHTML = items.map((item, i) => `
-    <article class="item" style="--i: ${i}">
+    <article class="item" style="--i: ${i}" data-id="${item.id}" tabindex="0" role="button" aria-label="${item.name}: подробнее">
+      <span class="item__more" aria-hidden="true">Подробнее</span>
       ${item.tag ? `<span class="item__tag">${item.tag}</span>` : ""}
       <div class="item__visual"><img src="${photoOf(item)}" alt="${item.name}" loading="lazy" width="1024" height="768"></div>
       <h3>${item.name}</h3>
@@ -222,7 +278,75 @@ document.addEventListener("click", (event) => {
   addToCart(button.dataset.add, button);
 });
 
+menuGrid.addEventListener("click", (event) => {
+  if (event.target.closest("[data-add]")) return;
+  const card = event.target.closest(".item");
+  if (card) openProduct(card.dataset.id, card);
+});
+
+menuGrid.addEventListener("keydown", (event) => {
+  if (event.target.matches(".item") && (event.key === "Enter" || event.key === " ")) {
+    event.preventDefault();
+    openProduct(event.target.dataset.id, event.target);
+  }
+});
+
 renderMenu();
+
+/* ---------- Карточка товара ---------- */
+
+const productEl = $("#product");
+const productAdd = $("#productAdd");
+let productId = null;
+let productOpener = null;
+
+function openProduct(id, opener) {
+  const item = findItem(id);
+  const details = DETAILS[id];
+  productId = id;
+  productOpener = opener;
+
+  const photo = $("#productPhoto");
+  photo.src = photoOf(item);
+  photo.alt = item.name;
+  $("#productCategory").textContent = CATEGORY_NAMES[item.cat];
+  $("#productName").textContent = item.name;
+  $("#productAbout").textContent = details.about;
+  $("#productNotes").innerHTML = item.notes.map((note) => `<span>${note}</span>`).join("");
+  $("#productSpecs").innerHTML = Object.entries(details.specs)
+    .map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join("");
+  productAdd.textContent = `+ В заказ · ${formatPrice(item.price)}`;
+
+  const tag = $("#productTag");
+  tag.hidden = !item.tag;
+  tag.textContent = item.tag || "";
+
+  productEl.hidden = false;
+  requestAnimationFrame(() => productEl.classList.add("is-open"));
+  document.body.classList.add("no-scroll");
+  $("#productClose").focus({ preventScroll: true });
+}
+
+function closeProduct() {
+  if (productEl.hidden) return;
+  productEl.classList.remove("is-open");
+  document.body.classList.remove("no-scroll");
+  setTimeout(() => {
+    if (!productEl.classList.contains("is-open")) productEl.hidden = true;
+  }, reduceMotion ? 0 : 450);
+  productOpener?.focus({ preventScroll: true });
+}
+
+productAdd.addEventListener("click", () => {
+  addToCart(productId, productAdd);
+  closeProduct();
+});
+
+$("#productClose").addEventListener("click", closeProduct);
+$("#productCloseText").addEventListener("click", closeProduct);
+productEl.addEventListener("click", (event) => {
+  if (event.target === productEl) closeProduct();
+});
 
 /* ---------- Корзина ---------- */
 
@@ -351,7 +475,9 @@ cartBtn.addEventListener("click", openCart);
 $("#cartClose").addEventListener("click", closeCart);
 overlay.addEventListener("click", closeCart);
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeCart();
+  if (event.key !== "Escape") return;
+  closeProduct();
+  closeCart();
 });
 
 const phoneInput = cartForm.elements.phone;
