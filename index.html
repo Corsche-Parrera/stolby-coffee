@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Столбы — specialty кофейня в Красноярске</title>
+  <meta name="description" content="Specialty кофе в Красноярске. Свежая обжарка, альтернативные методы и предзаказ с собой без очереди.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M4 36 L12 14 L17 22 L22 6 L30 24 L34 18 L38 36 Z" fill="currentColor"/>
+        </svg>
+        <span>СТОЛБЫ</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#about">О нас</a>
+        <a href="#menu">Меню</a>
+        <a href="#quiz">Подбор кофе</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <button class="cart-btn" id="cartBtn" aria-label="Открыть заказ">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.5 11a2 2 0 0 1-2 1.7h-7a2 2 0 0 1-2-1.7L5 8Zm3 0V6a4 4 0 0 1 8 0v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="cart-btn__count" id="cartCount">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="hero__rocks" data-parallax="0.25" aria-hidden="true">
+        <svg viewBox="0 0 1440 400" preserveAspectRatio="none">
+          <path d="M0 400 L0 300 L90 250 L160 280 L240 170 L300 210 L360 120 L420 190 L470 160 L540 260 L640 230 L720 290 L820 200 L880 90 L940 150 L990 110 L1060 230 L1150 200 L1230 270 L1320 220 L1440 280 L1440 400 Z" fill="#1c1712"/>
+        </svg>
+      </div>
+      <div class="beans" aria-hidden="true">
+        <span class="bean" data-parallax="0.6" style="--x: 8%;  --y: 22%; --r: 20deg;  --s: 1.1"></span>
+        <span class="bean" data-parallax="0.35" style="--x: 18%; --y: 70%; --r: -40deg; --s: 0.7"></span>
+        <span class="bean" data-parallax="0.8" style="--x: 46%; --y: 12%; --r: 70deg;  --s: 0.8"></span>
+        <span class="bean" data-parallax="0.5" style="--x: 88%; --y: 18%; --r: -15deg; --s: 1.2"></span>
+        <span class="bean" data-parallax="0.7" style="--x: 93%; --y: 64%; --r: 45deg;  --s: 0.9"></span>
+        <span class="bean" data-parallax="0.4" style="--x: 60%; --y: 82%; --r: 10deg;  --s: 0.6"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow reveal">Specialty coffee · Красноярск</p>
+          <h1 class="hero__title reveal">Кофе<br>на высоте <span class="accent">Столбов</span></h1>
+          <p class="hero__subtitle reveal">Обжариваем зерно каждую неделю, завариваем на воронке и эспрессо. Закажите заранее и заберите без очереди.</p>
+          <div class="hero__actions reveal">
+            <a href="#menu" class="btn btn--primary">Заказать с собой</a>
+            <a href="#quiz" class="btn btn--ghost">Подобрать кофе</a>
+          </div>
+        </div>
+
+        <div class="hero__cup reveal">
+          <svg class="cup" viewBox="0 0 300 320" aria-hidden="true">
+            <g class="steam">
+              <path class="steam__line steam__line--1" d="M115 110 C 95 85, 135 70, 115 45 C 100 25, 125 10, 115 -5"/>
+              <path class="steam__line steam__line--2" d="M150 110 C 130 85, 170 70, 150 45 C 135 25, 160 10, 150 -5"/>
+              <path class="steam__line steam__line--3" d="M185 110 C 165 85, 205 70, 185 45 C 170 25, 195 10, 185 -5"/>
+            </g>
+            <ellipse cx="150" cy="290" rx="120" ry="18" fill="#2a221b"/>
+            <path d="M60 130 H240 L225 255 Q220 285 190 285 H110 Q80 285 75 255 Z" fill="#f3e9dc"/>
+            <path d="M240 150 Q285 150 282 190 Q279 228 232 230" fill="none" stroke="#f3e9dc" stroke-width="14"/>
+            <ellipse cx="150" cy="130" rx="90" ry="16" fill="#e7d9c7"/>
+            <ellipse cx="150" cy="132" rx="78" ry="11" fill="#4a2c1a"/>
+            <path class="latte-art" d="M150 126 q-14 3 0 8 q14 -5 0 -8 Z" fill="#d9a066"/>
+            <path d="M95 190 L120 160 L135 180 L150 150 L170 185 L180 172 L205 205 H95 Z" fill="#e8a85c" opacity=".9"/>
+          </svg>
+          <div class="hero__badge">
+            <strong>Обжарка</strong>
+            <span id="roastTimer">через —</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Листать вниз"><span></span></a>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Эфиопия Иргачеффе</span><span>✦</span>
+        <span>Колумбия Уила</span><span>✦</span>
+        <span>Кения АА</span><span>✦</span>
+        <span>Бразилия Серрадо</span><span>✦</span>
+        <span>Воронка V60</span><span>✦</span>
+        <span>Аэропресс</span><span>✦</span>
+        <span>Колд брю</span><span>✦</span>
+        <span>Эфиопия Иргачеффе</span><span>✦</span>
+        <span>Колумбия Уила</span><span>✦</span>
+        <span>Кения АА</span><span>✦</span>
+        <span>Бразилия Серрадо</span><span>✦</span>
+        <span>Воронка V60</span><span>✦</span>
+        <span>Аэропресс</span><span>✦</span>
+        <span>Колд брю</span><span>✦</span>
+      </div>
+    </div>
+
+    <section class="section about" id="about">
+      <div class="container">
+        <p class="eyebrow reveal">О нас</p>
+        <h2 class="section__title reveal">Маленькая кофейня<br>с большим вниманием к зерну</h2>
+        <div class="about__grid">
+          <article class="feature reveal">
+            <div class="feature__icon">🔥</div>
+            <h3>Свежая обжарка</h3>
+            <p>Обжариваем небольшими партиями каждую неделю. Зерно в чашке — не старше 30 дней.</p>
+          </article>
+          <article class="feature reveal">
+            <div class="feature__icon">⏱</div>
+            <h3>Без очереди</h3>
+            <p>Оформите предзаказ на сайте, выберите время — и заберите готовый напиток по дороге на работу.</p>
+          </article>
+          <article class="feature reveal">
+            <div class="feature__icon">⛰</div>
+            <h3>Местные</h3>
+            <p>Мы из Красноярска: выпечка от местных пекарен, а по выходным — термосы для походов на Столбы.</p>
+          </article>
+        </div>
+
+        <div class="stats">
+          <div class="stat reveal"><strong data-count="12">0</strong><span>сортов в ротации</span></div>
+          <div class="stat reveal"><strong data-count="3">0</strong><span>минуты на предзаказ</span></div>
+          <div class="stat reveal"><strong data-count="4800" data-suffix="+">0</strong><span>чашек в месяц</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu" id="menu">
+      <div class="container">
+        <p class="eyebrow reveal">Меню</p>
+        <h2 class="section__title reveal">Выбирайте и добавляйте<br>в заказ с собой</h2>
+        <div class="filters reveal" id="filters" role="tablist">
+          <button class="filter is-active" data-filter="all">Все</button>
+          <button class="filter" data-filter="espresso">Эспрессо</button>
+          <button class="filter" data-filter="filter">Альтернатива</button>
+          <button class="filter" data-filter="cold">Холодное</button>
+          <button class="filter" data-filter="food">Десерты</button>
+        </div>
+        <div class="menu__grid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <section class="section quiz" id="quiz">
+      <div class="container">
+        <div class="quiz__card reveal">
+          <div class="quiz__head">
+            <p class="eyebrow">Подбор кофе</p>
+            <h2 class="section__title">Не знаете, что выбрать?</h2>
+            <p class="quiz__lead">Три вопроса — и мы подскажем напиток под ваш вкус.</p>
+          </div>
+          <div class="quiz__progress"><span id="quizProgress"></span></div>
+          <div class="quiz__body" id="quizBody"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contacts" id="contacts">
+      <div class="container contacts__inner">
+        <div class="contacts__info">
+          <p class="eyebrow reveal">Контакты</p>
+          <h2 class="section__title reveal">Заходите в гости</h2>
+          <div class="spot reveal">
+            <h3>Центр</h3>
+            <p>пр. Мира, 50</p>
+            <p class="spot__hours">Пн–Пт 7:30–21:00 · Сб–Вс 9:00–21:00</p>
+          </div>
+          <div class="spot reveal">
+            <h3>Академгородок</h3>
+            <p>ул. Академгородок, 15</p>
+            <p class="spot__hours">Ежедневно 8:00–20:00</p>
+          </div>
+          <div class="spot reveal">
+            <h3>Связь</h3>
+            <p><a href="tel:+73912000000">+7 (391) 200-00-00</a></p>
+            <p class="spot__hours">Адреса и телефон в демо — вымышленные</p>
+          </div>
+        </div>
+        <div class="map reveal">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?ll=92.8700%2C56.0150&z=12&l=map"
+            title="Карта кофеен Столбы"
+            loading="lazy"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 Столбы · specialty coffee</span>
+      <span>Демо-сайт для портфолио</span>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart" id="cart" aria-label="Ваш заказ">
+    <div class="cart__head">
+      <h3>Заказ с собой</h3>
+      <button class="cart__close" id="cartClose" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="cart__items" id="cartItems"></div>
+    <form class="cart__form" id="cartForm">
+      <label>Где заберёте
+        <select name="spot" required>
+          <option value="Центр, пр. Мира, 50">Центр, пр. Мира, 50</option>
+          <option value="Академгородок, 15">Академгородок, 15</option>
+        </select>
+      </label>
+      <label>Когда
+        <select name="time" required>
+          <option value="10">Через 10 минут</option>
+          <option value="15" selected>Через 15 минут</option>
+          <option value="30">Через 30 минут</option>
+          <option value="60">Через час</option>
+        </select>
+      </label>
+      <label>Имя
+        <input type="text" name="name" placeholder="Как к вам обращаться" required>
+      </label>
+      <label>Телефон
+        <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+      </label>
+      <div class="cart__total">
+        <span>Итого</span>
+        <strong id="cartTotal">0 ₽</strong>
+      </div>
+      <button type="submit" class="btn btn--primary btn--block" id="cartSubmit">Оформить предзаказ</button>
+    </form>
+    <div class="cart__success" id="cartSuccess" hidden></div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
