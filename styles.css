@@ -227,6 +227,96 @@ button, input, select { font: inherit; color: inherit; }
 .burger.is-open span:first-child { top: 21px; transform: rotate(45deg); }
 .burger.is-open span:last-child { top: 21px; transform: rotate(-45deg); }
 
+/* ---------- Фон на всю страницу ---------- */
+
+main,
+.footer { position: relative; z-index: 1; }
+
+.scenery {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.scenery__glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80vmax;
+  height: 80vmax;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.scenery__glow--warm { background: radial-gradient(circle, rgba(232, 168, 92, .13), transparent 60%); }
+.scenery__glow--amber { background: radial-gradient(circle, rgba(201, 115, 58, .1), transparent 60%); }
+
+.scenery__beans { position: absolute; inset: 0; }
+
+.sbean {
+  position: absolute;
+  top: 0;
+  left: var(--x);
+  will-change: transform;
+}
+
+.sbean__body {
+  position: relative;
+  display: block;
+  width: 34px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6b4128, #3a2215);
+  box-shadow: inset -4px -6px 10px rgba(0, 0, 0, .4);
+  opacity: var(--o);
+  filter: blur(var(--blur));
+  animation: beanFloat var(--dur) ease-in-out infinite alternate;
+  animation-delay: var(--delay);
+}
+
+.sbean__body::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  bottom: 10%;
+  width: 3px;
+  margin-left: -1.5px;
+  border-radius: 50%;
+  background: #1f120a;
+  transform: rotate(8deg);
+}
+
+@keyframes beanFloat {
+  from { transform: translateY(-10px) rotate(-8deg) scale(var(--s)); }
+  to { transform: translateY(10px) rotate(8deg) scale(var(--s)); }
+}
+
+.scenery__rocks {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-repeat: repeat-x;
+  background-position: left bottom;
+  will-change: transform;
+}
+
+.scenery__rocks--far {
+  width: calc(100% + 1600px);
+  height: 42vh;
+  background-size: 1600px 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 300' preserveAspectRatio='none'%3E%3Cpath fill='%23151009' d='M0 300 L0 170 L80 160 L130 120 L160 60 Q172 30 190 34 Q206 40 208 70 L222 110 L260 130 L330 100 L360 140 L430 150 L480 90 L500 40 Q510 18 524 22 Q538 28 536 55 L548 95 L590 120 L650 110 L700 150 L780 140 L830 80 Q842 58 858 60 Q872 64 872 88 L890 130 L960 120 L1010 150 L1080 140 L1120 70 Q1130 44 1146 46 Q1162 50 1160 80 L1175 120 L1240 135 L1300 100 L1330 120 L1400 150 L1470 140 L1530 160 L1600 170 L1600 300 Z'/%3E%3C/svg%3E");
+}
+
+.scenery__rocks--near {
+  width: calc(100% + 1200px);
+  height: 28vh;
+  background-size: 1200px 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300' preserveAspectRatio='none'%3E%3Cpath fill='%231c1712' d='M0 300 L0 220 L60 205 L110 215 L150 150 Q160 120 175 118 Q190 120 195 150 L215 190 L260 200 L320 170 L350 90 Q362 60 380 62 Q396 66 400 95 L412 140 L440 120 L470 175 L540 195 L600 180 L660 205 L720 160 L745 110 Q755 85 770 88 Q784 92 786 118 L800 150 L830 140 L860 185 L940 200 L1000 175 L1030 130 Q1040 112 1052 116 Q1062 122 1062 140 L1080 190 L1140 210 L1200 220 L1200 300 Z'/%3E%3C/svg%3E");
+}
+
 /* ---------- Первый экран ---------- */
 
 .hero {
@@ -236,24 +326,8 @@ button, input, select { font: inherit; color: inherit; }
   align-items: center;
   padding: 140px 0 100px;
   overflow: hidden;
-  background:
-    radial-gradient(60% 60% at 75% 40%, rgba(232, 168, 92, .14), transparent 70%),
-    radial-gradient(40% 40% at 10% 90%, rgba(201, 115, 58, .1), transparent 70%),
-    var(--bg);
+  background: radial-gradient(50% 50% at 75% 45%, rgba(232, 168, 92, .1), transparent 70%);
 }
-
-.hero__rocks {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -40px;
-  height: 45%;
-  pointer-events: none;
-  transform: translateY(var(--py, 0));
-  will-change: transform;
-}
-
-.hero__rocks svg { width: 100%; height: 100%; }
 
 .hero__inner {
   position: relative;
@@ -349,35 +423,6 @@ button, input, select { font: inherit; color: inherit; }
 
 .hero__badge span { font-size: 14px; color: var(--muted); }
 
-.beans { position: absolute; inset: 0; pointer-events: none; }
-
-.bean {
-  position: absolute;
-  left: var(--x);
-  top: var(--y);
-  width: 34px;
-  height: 46px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #6b4128, #3a2215);
-  opacity: .7;
-  box-shadow: inset -4px -6px 10px rgba(0, 0, 0, .4);
-  transform: translateY(var(--py, 0)) rotate(var(--r)) scale(var(--s));
-  will-change: transform;
-}
-
-.bean::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 10%;
-  bottom: 10%;
-  width: 3px;
-  margin-left: -1.5px;
-  border-radius: 50%;
-  background: #1f120a;
-  transform: rotate(8deg);
-}
-
 .scroll-hint {
   position: absolute;
   left: 50%;
@@ -412,7 +457,8 @@ button, input, select { font: inherit; color: inherit; }
 .marquee {
   overflow: hidden;
   border-block: 1px solid var(--line);
-  background: var(--bg-2);
+  background: rgba(23, 18, 14, .55);
+  backdrop-filter: blur(8px);
   padding: 22px 0;
 }
 
@@ -554,7 +600,6 @@ button, input, select { font: inherit; color: inherit; }
 
 /* ---------- Меню ---------- */
 
-.menu { background: var(--bg-2); }
 
 .filters {
   display: flex;
@@ -979,7 +1024,14 @@ button, input, select { font: inherit; color: inherit; }
 
 /* ---------- Подвал ---------- */
 
-.footer { border-top: 1px solid var(--line); padding: 30px 0; color: var(--muted); font-size: 14px; }
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+  color: var(--muted);
+  font-size: 14px;
+  background: rgba(15, 12, 10, .6);
+  backdrop-filter: blur(8px);
+}
 .footer__inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
 /* ---------- Корзина ---------- */

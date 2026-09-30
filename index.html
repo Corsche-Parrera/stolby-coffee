@@ -12,6 +12,14 @@
 </head>
 <body>
 
+  <div class="scenery" id="scenery" aria-hidden="true">
+    <div class="scenery__glow scenery__glow--warm"></div>
+    <div class="scenery__glow scenery__glow--amber"></div>
+    <div class="scenery__beans" id="sceneryBeans"></div>
+    <div class="scenery__rocks scenery__rocks--far" data-speed="0.08" data-tile="1600"></div>
+    <div class="scenery__rocks scenery__rocks--near" data-speed="0.18" data-tile="1200"></div>
+  </div>
+
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#top" class="logo">
@@ -37,20 +45,6 @@
   <main id="top">
 
     <section class="hero">
-      <div class="hero__rocks" data-parallax="0.25" aria-hidden="true">
-        <svg viewBox="0 0 1440 400" preserveAspectRatio="none">
-          <path d="M0 400 L0 300 L90 250 L160 280 L240 170 L300 210 L360 120 L420 190 L470 160 L540 260 L640 230 L720 290 L820 200 L880 90 L940 150 L990 110 L1060 230 L1150 200 L1230 270 L1320 220 L1440 280 L1440 400 Z" fill="#1c1712"/>
-        </svg>
-      </div>
-      <div class="beans" aria-hidden="true">
-        <span class="bean" data-parallax="0.6" style="--x: 8%;  --y: 22%; --r: 20deg;  --s: 1.1"></span>
-        <span class="bean" data-parallax="0.35" style="--x: 18%; --y: 70%; --r: -40deg; --s: 0.7"></span>
-        <span class="bean" data-parallax="0.8" style="--x: 46%; --y: 12%; --r: 70deg;  --s: 0.8"></span>
-        <span class="bean" data-parallax="0.5" style="--x: 88%; --y: 18%; --r: -15deg; --s: 1.2"></span>
-        <span class="bean" data-parallax="0.7" style="--x: 93%; --y: 64%; --r: 45deg;  --s: 0.9"></span>
-        <span class="bean" data-parallax="0.4" style="--x: 60%; --y: 82%; --r: 10deg;  --s: 0.6"></span>
-      </div>
-
       <div class="container hero__inner">
         <div class="hero__text">
           <p class="eyebrow reveal">Specialty coffee · Красноярск</p>

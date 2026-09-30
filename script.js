@@ -181,26 +181,91 @@ function animateCounter(el) {
   requestAnimationFrame(tick);
 }
 
-/* ---------- Параллакс ---------- */
+/* ---------- Фон: зёрна, скалы, свечение ---------- */
 
-const parallaxEls = $$("[data-parallax]");
-let parallaxTicking = false;
+const sceneryBeansEl = $("#sceneryBeans");
+const rockLayers = $$(".scenery__rocks");
+const [glowWarm, glowAmber] = $$(".scenery__glow");
+let sceneryBeans = [];
+let sceneryTicking = false;
 
-function updateParallax() {
-  const y = window.scrollY;
-  parallaxEls.forEach((el) => {
-    el.style.setProperty("--py", `${y * Number(el.dataset.parallax)}px`);
-  });
-  parallaxTicking = false;
+function seededRandom(seed) {
+  return () => {
+    seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
 }
+
+function buildSceneryBeans() {
+  const random = seededRandom(7);
+  const count = window.innerWidth < 760 ? 16 : 34;
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const viewport = window.innerHeight;
+
+  sceneryBeans = Array.from({ length: count }, () => {
+    const depth = 0.15 + random() * 0.75;
+    const nearEdge = random() < 0.7;
+    const x = nearEdge
+      ? (random() < 0.5 ? 1 + random() * 16 : 83 + random() * 14)
+      : 5 + random() * 90;
+    return {
+      x,
+      depth,
+      base: random() * (scrollable * depth + viewport) - 40,
+      rotation: random() * 360,
+      spin: (random() - 0.5) * 0.12,
+      scale: 0.45 + depth * 0.9,
+      blur: (1 - depth) * 3,
+      opacity: 0.25 + depth * 0.55,
+      duration: 4 + random() * 4,
+      delay: -random() * 8,
+    };
+  });
+
+  sceneryBeansEl.innerHTML = sceneryBeans.map((bean) => `
+    <span class="sbean" style="--x: ${bean.x}%">
+      <span class="sbean__body" style="--s: ${bean.scale.toFixed(2)}; --blur: ${bean.blur.toFixed(1)}px; --o: ${bean.opacity.toFixed(2)}; --dur: ${bean.duration.toFixed(1)}s; --delay: ${bean.delay.toFixed(1)}s"></span>
+    </span>
+  `).join("");
+
+  sceneryBeans.forEach((bean, i) => { bean.el = sceneryBeansEl.children[i]; });
+  updateScenery();
+}
+
+function updateScenery() {
+  const y = window.scrollY;
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  const scrollable = document.documentElement.scrollHeight - h;
+  const progress = scrollable > 0 ? y / scrollable : 0;
+
+  sceneryBeans.forEach((bean) => {
+    const top = bean.base - y * bean.depth;
+    bean.el.style.transform = `translate3d(0, ${top.toFixed(1)}px, 0) rotate(${(bean.rotation + y * bean.spin).toFixed(1)}deg)`;
+  });
+
+  rockLayers.forEach((layer) => {
+    const shift = -((y * Number(layer.dataset.speed)) % Number(layer.dataset.tile));
+    layer.style.transform = `translate3d(${shift.toFixed(1)}px, 0, 0)`;
+  });
+
+  const size = Math.max(w, h) * 0.8;
+  glowWarm.style.transform = `translate3d(${w * (0.75 - progress * 0.6) - size / 2}px, ${h * (0.35 + progress * 0.3) - size / 2}px, 0)`;
+  glowAmber.style.transform = `translate3d(${w * (0.1 + progress * 0.7) - size / 2}px, ${h * (0.9 - progress * 0.5) - size / 2}px, 0)`;
+
+  sceneryTicking = false;
+}
+
+buildSceneryBeans();
+new ResizeObserver(buildSceneryBeans).observe(document.body);
 
 if (!reduceMotion) {
   window.addEventListener("scroll", () => {
-    const heroVisible = window.scrollY < window.innerHeight * 1.2;
-    if (heroVisible && !parallaxTicking) {
-      parallaxTicking = true;
-      requestAnimationFrame(updateParallax);
-    }
+    if (sceneryTicking) return;
+    sceneryTicking = true;
+    requestAnimationFrame(updateScenery);
   }, { passive: true });
 }
 
