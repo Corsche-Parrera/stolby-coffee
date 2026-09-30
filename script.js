@@ -1,17 +1,17 @@
 const MENU = [
-  { id: "espresso", cat: "espresso", icon: "☕", name: "Эспрессо", desc: "Бленд Бразилии и Колумбии, плотный и сладкий.", notes: ["какао", "орех"], price: 160 },
-  { id: "cappuccino", cat: "espresso", icon: "☕", name: "Капучино", desc: "Классика на бархатном молоке.", notes: ["молочный шоколад", "карамель"], price: 240, tag: "Хит" },
-  { id: "flatwhite", cat: "espresso", icon: "🥛", name: "Флэт уайт", desc: "Двойной эспрессо на эфиопском зерне и немного молока.", notes: ["ягоды", "сливки"], price: 260 },
-  { id: "raf", cat: "espresso", icon: "🌰", name: "Раф «Кедровый»", desc: "Сливочный раф с пастой из сибирского кедрового ореха.", notes: ["кедр", "ваниль"], price: 310, tag: "Сибирь" },
-  { id: "v60", cat: "filter", icon: "🍵", name: "V60 Эфиопия", desc: "Воронка на лёгкой обжарке, чистая и цветочная чашка.", notes: ["жасмин", "бергамот", "персик"], price: 290 },
-  { id: "aeropress", cat: "filter", icon: "🧪", name: "Аэропресс Кения", desc: "Яркая, сочная чашка с выраженной кислинкой.", notes: ["смородина", "грейпфрут"], price: 310 },
-  { id: "chemex", cat: "filter", icon: "⚗️", name: "Кемекс на двоих", desc: "500 мл сорта недели. Удобно взять с собой в термос.", notes: ["сорт недели"], price: 450 },
-  { id: "coldbrew", cat: "cold", icon: "🧊", name: "Колд брю", desc: "Настаиваем 18 часов в холоде. Мягкий и бодрый.", notes: ["шоколад", "чернослив"], price: 270 },
-  { id: "tonic", cat: "cold", icon: "🍋", name: "Эспрессо-тоник", desc: "Тоник, лёд, цедра и шот эфиопского эспрессо.", notes: ["цитрус", "свежесть"], price: 290 },
-  { id: "icelatte", cat: "cold", icon: "🥤", name: "Айс латте", desc: "Эспрессо, холодное молоко и много льда.", notes: ["карамель", "орех"], price: 280 },
-  { id: "croissant", cat: "food", icon: "🥐", name: "Круассан", desc: "Из местной пекарни, привозим каждое утро.", notes: ["сливочное масло"], price: 190 },
-  { id: "cheesecake", cat: "food", icon: "🍰", name: "Облепиховый чизкейк", desc: "Нежный сливочный чизкейк с облепиховым конфи.", notes: ["облепиха", "сливки"], price: 280, tag: "Новинка" },
-  { id: "brownie", cat: "food", icon: "🍫", name: "Брауни с кедром", desc: "Тёмный шоколад и обжаренный кедровый орех.", notes: ["шоколад", "кедр"], price: 240 },
+  { id: "espresso", cat: "espresso", name: "Эспрессо", desc: "Бленд Бразилии и Колумбии, плотный и сладкий.", notes: ["какао", "орех"], price: 160 },
+  { id: "cappuccino", cat: "espresso", name: "Капучино", desc: "Классика на бархатном молоке.", notes: ["молочный шоколад", "карамель"], price: 240, tag: "Хит" },
+  { id: "flatwhite", cat: "espresso", name: "Флэт уайт", desc: "Двойной эспрессо на эфиопском зерне и немного молока.", notes: ["ягоды", "сливки"], price: 260 },
+  { id: "raf", cat: "espresso", name: "Раф «Кедровый»", desc: "Сливочный раф с пастой из сибирского кедрового ореха.", notes: ["кедр", "ваниль"], price: 310, tag: "Сибирь" },
+  { id: "v60", cat: "filter", name: "V60 Эфиопия", desc: "Воронка на лёгкой обжарке, чистая и цветочная чашка.", notes: ["жасмин", "бергамот", "персик"], price: 290 },
+  { id: "aeropress", cat: "filter", name: "Аэропресс Кения", desc: "Яркая, сочная чашка с выраженной кислинкой.", notes: ["смородина", "грейпфрут"], price: 310 },
+  { id: "chemex", cat: "filter", name: "Кемекс на двоих", desc: "500 мл сорта недели. Удобно взять с собой в термос.", notes: ["сорт недели"], price: 450 },
+  { id: "coldbrew", cat: "cold", name: "Колд брю", desc: "Настаиваем 18 часов в холоде. Мягкий и бодрый.", notes: ["шоколад", "чернослив"], price: 270 },
+  { id: "tonic", cat: "cold", name: "Эспрессо-тоник", desc: "Тоник, лёд, цедра и шот эфиопского эспрессо.", notes: ["цитрус", "свежесть"], price: 290 },
+  { id: "icelatte", cat: "cold", name: "Айс латте", desc: "Эспрессо, холодное молоко и много льда.", notes: ["карамель", "орех"], price: 280 },
+  { id: "croissant", cat: "food", name: "Круассан", desc: "Из местной пекарни, привозим каждое утро.", notes: ["сливочное масло"], price: 190 },
+  { id: "cheesecake", cat: "food", name: "Облепиховый чизкейк", desc: "Нежный сливочный чизкейк с облепиховым конфи.", notes: ["облепиха", "сливки"], price: 280, tag: "Новинка" },
+  { id: "brownie", cat: "food", name: "Брауни с кедром", desc: "Тёмный шоколад и обжаренный кедровый орех.", notes: ["шоколад", "кедр"], price: 240 },
 ];
 
 const QUIZ = [
@@ -59,6 +59,7 @@ const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const formatPrice = (value) => `${value.toLocaleString("ru-RU")} ₽`;
 const findItem = (id) => MENU.find((item) => item.id === id);
+const photoOf = (item) => `images/${item.id}.jpg`;
 
 /* ---------- Шапка и мобильное меню ---------- */
 
@@ -178,7 +179,7 @@ function renderMenu(filter = "all") {
   menuGrid.innerHTML = items.map((item, i) => `
     <article class="item" style="--i: ${i}">
       ${item.tag ? `<span class="item__tag">${item.tag}</span>` : ""}
-      <div class="item__visual">${item.icon}</div>
+      <div class="item__visual"><img src="${photoOf(item)}" alt="${item.name}" loading="lazy" width="1024" height="768"></div>
       <h3>${item.name}</h3>
       <p class="item__desc">${item.desc}</p>
       <div class="item__notes">${item.notes.map((note) => `<span>${note}</span>`).join("")}</div>
@@ -262,7 +263,7 @@ function renderCart() {
       const item = findItem(row.id);
       return `
         <div class="cart-row">
-          <div class="cart-row__icon">${item.icon}</div>
+          <img class="cart-row__photo" src="${photoOf(item)}" alt="">
           <div>
             <div class="cart-row__name">${item.name}</div>
             <div class="cart-row__price">${formatPrice(item.price)} · ${CATEGORY_NAMES[item.cat]}</div>
@@ -466,7 +467,7 @@ function renderQuizResult() {
 
   quizBody.innerHTML = `
     <div class="quiz__step quiz__result">
-      <div class="quiz__result-visual">${item.icon}</div>
+      <img class="quiz__result-visual" src="${photoOf(item)}" alt="${item.name}">
       <div>
         <p class="eyebrow">Ваш напиток</p>
         <h3>${item.name} · ${formatPrice(item.price)}</h3>
